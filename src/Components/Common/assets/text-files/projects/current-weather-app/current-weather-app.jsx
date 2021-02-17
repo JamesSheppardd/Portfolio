@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import img1 from "./photo1.png";
 import img2 from "./photo2.png";
+import img3 from "./photo3.PNG";
 
 const StyledDiv = styled.div`
     font-size: 23px;
@@ -26,6 +27,8 @@ const CurrentWeatherApp = () => {
             <img src={img1} alt="1" width={600} />
             <br />
             <img src={img2} alt="2" width={600} />
+            <br />
+            <img src={img3} alt="3" width={600} />
         </StyledDiv>
         
     )

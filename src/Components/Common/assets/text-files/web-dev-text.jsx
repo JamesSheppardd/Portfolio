@@ -16,7 +16,7 @@ const WebDevText = () => {
             </p>
             <br />
             <p>
-            After around two months of messing around in plain JavaScript, I decided to dive into React, and I am loving it so far. This website is the first thing I have made using React, and have had a pretty 
+            After two months of messing around in plain JavaScript, I decided to dive into React, and I am loving it so far. This website is the first thing I have made using React, and have had a pretty 
             enjoyable time learning about using components, and using some state hooks. All in all, I would say for the time I have spent making this website, I am proud of how it has come out, and think it fits 
             with my retro ‘Windows 95’ feel.
             </p>
