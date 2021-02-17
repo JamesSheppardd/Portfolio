@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import img1 from "./photo1.png";
 import img2 from "./photo2.png";
-import img3 from "./photo3.PNG";
+import img3 from "./photo3.png";
 
 const StyledDiv = styled.div`
     font-size: 23px;
