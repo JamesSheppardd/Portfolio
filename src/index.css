@@ -36,6 +36,6 @@ button:hover {
   cursor: url("./Components/Common/assets/images/cursors/cursor-normal.png") 12 2, auto;
 }
 
-.active-window {
+.active {
   z-index: 9999;
 }

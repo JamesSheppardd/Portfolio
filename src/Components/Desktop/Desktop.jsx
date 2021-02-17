@@ -19,6 +19,8 @@ const Desktop = (props) => {
     const [textOpen, setTextOpen] = useState(false);
     const [filename, setFilename] = useState(undefined);
     const [activeWindow, setActiveWindow] = useState("");
+    const [zInd, setZInd] = useState(3);
+
     
 
     const triggerOpenProjectsFolderState = (setTo) => {
@@ -47,16 +49,14 @@ const Desktop = (props) => {
         
     }
 
-    const triggerActiveWindow = (name) => {
-        setActiveWindow(() => name);
-        console.log(name);
+    const triggerSetZInd = () => {
+        setZInd(prevState => prevState += 1);
+        console.log(zInd)
     }
 
-    const activeWindowCSS = () => css`
-        .${activeWindow}{
-            z-index: 9999;
-        }
-    `
+    const activeWindowCSS = (window) => {
+        console.log("change on ")
+    }
 
     return (
         <div className="desktop" style={{activeWindowCSS}}>
@@ -85,8 +85,6 @@ const Desktop = (props) => {
                 isFileExplorer={true}
                 openText={triggerOpenTextDocument}
                 setFilename={triggerSetFilename}
-                activeWindow={triggerActiveWindow}
-                isActive={true}
                 objects={[
                     {"name": "C#", "size": 0, "type": "File Folder", "modified": "16 February 2021"}, 
                     {"name": "Gamemaker Language (GML)", "size": 0, "type": "File Folder", "modified": "16 February 2021"},
@@ -106,7 +104,6 @@ const Desktop = (props) => {
                 isFileExplorer={true}
                 openText={triggerOpenTextDocument}
                 setFilename={triggerSetFilename}
-                isActive={false}
                 objects={[
                     {"name": "Python", "size": 2000, "type": "Text Document", "modified": "ayer"}, 
                     {"name": "HTML/CSS/JS", "size": 700000, "type": "Text Document", "modified": "nachste woche"},

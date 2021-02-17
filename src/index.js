@@ -8,10 +8,11 @@ import CrtEffect from "./Components/Effects/CrtEffect.jsx";
 import "./styles/styles.scss";
 
 class App extends Component {
-
   state = {
     time: moment().format("h:mm A")
   }
+  
+  
 
   componentDidMount() {
     // Get time
@@ -20,8 +21,6 @@ class App extends Component {
       1000
     )
   }
-
-  
 
   render() {
     return (

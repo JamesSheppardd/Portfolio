@@ -14,6 +14,8 @@ import StatusBar from "./WindowStatusBar";
 // Cursors
 import moveCursor from "../Common/assets/images/cursors/cursor-move.png";
 
+
+
 export const newObject = (name, size, type, modified) => {
   return {
     "name": name,
@@ -24,13 +26,14 @@ export const newObject = (name, size, type, modified) => {
 } 
 
 
+
+
 const StyledWindow = styled.div`
     position: absolute;
     left: ${props => props.leftPos}%;
     top: ${props => props.topPos}%;
     padding: ${props => props.padding}px;
     font-size: 1rem;
-    
     ${createBorderStyles()}
     ${createBoxStyles()}
 `;
@@ -67,7 +70,6 @@ const Window = props => {
   const [objects, setObjects] = useState(props.objects);
   const [currentFolderName, setCurrentFolderName] = useState(props.currentFolderName);
   const [windowMaximise, setWindowMaximise] = useState(false);
-  let isActive = props.isActive;
 
   const triggerWindowMaximiseState = () => {
     setWindowMaximise(prevWindowMaximise => !prevWindowMaximise);
@@ -81,17 +83,24 @@ const Window = props => {
     }
   }
 
-  const makeActive = () => {
-    isActive = !isActive;
-    console.log(isActive);
+  const changeToActive = (o) => {
+    const activeObjects = document.getElementsByClassName("active");
+    const newActive = document.getElementsByClassName(`${props.className}__window`)[0];
+    for(var i = 0; i < activeObjects.length; i++){
+      if(activeObjects[i] !== newActive){
+        activeObjects[i].classList.remove("active");
+      }
+    };
+    newActive.classList.add("active");
+    console.log(o)
   }
 
     return (
-      <Draggable bounds="parent" handle="strong"  >
-        <StyledWindow className={`${props.className}__window`} leftPos={props.leftPos} topPos={props.topPos} padding={400} style={{zIndex: isActive ? 9999 : 5}} onClick={makeActive} >
-          <strong className={`${props.className}__header`} style={{cursor: `url("../Common/assets/images/cursors/cursor-move.png")`}}>
+      <Draggable bounds="parent" handle="g" >
+        <StyledWindow className={`${props.className}__window`} leftPos={props.leftPos} topPos={props.topPos} padding={400} onMouseDownCapture={changeToActive} >
+          <g className={`${props.className}__header`} style={{cursor: `url("../Common/assets/images/cursors/cursor-move.png")`}}>
             <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
-          </strong>
+          </g>
           
           <WindowOptions className={`${props.className}__options`} />
           <WindowInner className={`${props.className}__inner`} objects={objects} openFolder={openFolder} setObjects={setObjects} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} openText={openText} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />
