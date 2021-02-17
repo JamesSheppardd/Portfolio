@@ -1,0 +1,41 @@
+
+
+body {
+  background-color: #0d7173;
+  cursor: url("./Components/Common/assets/images/cursors/cursor-normal.png") 0 0, auto;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.window-header:hover {
+  cursor: url("./Components/Common/assets/images/cursors/cursor-move.png") 15 17, move;
+}
+
+.window-header__content--exit:hover, .window-header__content--maximise:hover, .window-header__content--minimise:hover {
+  cursor: url("./Components/Common/assets/images/cursors/cursor-normal.png"), auto;
+}
+
+.text-document__inner--window:hover, .text-document__inner--content:hover {
+  cursor: url("./Components/Common/assets/images/cursors/cursor-text.png") 15 17, text;
+}
+
+a:hover {
+  cursor: url("./Components/Common/assets/images/cursors/cursor-pointer.png") 12 2, auto;
+}
+
+button:hover {
+  cursor: url("./Components/Common/assets/images/cursors/cursor-normal.png") 12 2, auto;
+}
+
+.active-window {
+  z-index: 9999;
+}

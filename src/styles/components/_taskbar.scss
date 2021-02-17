@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.taskbar {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+}
+
+.taskbar-time {
+    position: absolute;
+    font-family: $main-font;
+    bottom: 1.5vh;
+    right: 1vw;
+    font-size: 1.3vw;
+}
+
+.taskbar-start_button {
+    position: absolute;
+    bottom: .8vh;
+    left: .3vw;
+    width: 6.3vw;
+    height: 3vh;
+    font-weight: bold;
+    font-size: 1.6vw;
+    text-indent: 2.6vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    transition-duration: .4;
+}
+
