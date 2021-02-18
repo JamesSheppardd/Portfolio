@@ -27,13 +27,26 @@ const DesktopButton = props => {
         (props.setFilename && props.setFilename(object));
         
       }
+      const openTab = () => {
+          if(props.link !== "mailto:jamesasheppard9@gmail.com"){
+            window.open(props.link, "_blank");
+          }
+          else{
+            window.open(props.link, "_self");
+          }
+      }
 
     return (
         <div style={{paddingTop: 10, paddingBottom: 130, paddingLeft: 30 }}>
-            <DesktopButtonStyled className={props.formClass} onDoubleClick={() => openText(props.text)}>
+            {props.openWindow && <DesktopButtonStyled className={props.formClass} onDoubleClick={() => openText(props.text)}>
                 <img src={props.icon} className={`image ${props.iconClass}`} alt="icon" style={{display: "block", width: 64, marginLeft: "auto", marginRight: "auto"}} ></img>
                 <p className={props.textClass} style={{textAlign: "center"}} >{props.text}</p>
-            </DesktopButtonStyled>
+            </DesktopButtonStyled>}
+            
+            {props.link && <DesktopButtonStyled className={props.formClass} onDoubleClick={openTab}>
+                <img src={props.icon} className={`image ${props.iconClass}`} alt="icon" style={{display: "block", width: 64, marginLeft: "auto", marginRight: "auto"}} ></img>
+                <p className={props.textClass} style={{textAlign: "center"}} >{props.text}</p>
+            </DesktopButtonStyled>}
         </div>
     )
 }

@@ -11,6 +11,8 @@ const determineTextDocument = (filename) => {
             return <text.PythonText className={`text-document__${filename}`} filename={filename} />;
         case "HTML/CSS/JS":
             return <text.WebDevText className={`text-document__${filename}`} filename={filename} />;
+        case "Portfolio":
+            return <text.PortfolioText className={`text-document__${filename}`} filename={filename} />;
         default:
             break;
     }

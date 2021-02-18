@@ -96,11 +96,13 @@ const Window = props => {
   }
 
     return (
-      <Draggable bounds="parent" handle="g" >
+      <Draggable bounds="parent" handle="strong" >
         <StyledWindow className={`${props.className}__window`} leftPos={props.leftPos} topPos={props.topPos} padding={400} onMouseDownCapture={changeToActive} >
-          <g className={`${props.className}__header`} style={{cursor: `url("../Common/assets/images/cursors/cursor-move.png")`}}>
-            <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
-          </g>
+          <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
+          <strong className={`${props.className}__drag drag-area`}>
+            <div style={{position: "absolute", left: 10, right: 100, top: 6, height: 30}}></div>
+          </strong>
+          
           
           <WindowOptions className={`${props.className}__options`} />
           <WindowInner className={`${props.className}__inner`} objects={objects} openFolder={openFolder} setObjects={setObjects} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} openText={openText} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />

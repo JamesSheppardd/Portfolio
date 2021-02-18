@@ -68,10 +68,10 @@ const Desktop = (props) => {
             <DesktopButton className="desktop__languages" text="Languages" icon={images.folderIcon} iconClass="desktop__languages__icon" textClass="desktop__languages__text" formClass="desktop__languages" openWindow={triggerOpenLanguagesFolderState}/>
             {/* CV button */}
             <DesktopButton className="desktop__cv" text="CV" icon={images.textFileIcon} iconClass="desktop__cv__icon" textClass="desktop__cv__text" formClass="desktop__cv" openWindow={triggerOpenTextDocument} setFilename={triggerSetFilename}/>
-            {/* Socials button */}
-            <DesktopButton className="desktop__socials" text="Socials" icon={images.folderIcon} iconClass="desktop__socials__icon" textClass="desktop__socials__text" formClass="desktop__socials" openWindow={triggerOpenSocialsFolderState}/>
+            {/* GitHub button */}
+            <DesktopButton className="desktop__github" text="GitHub" icon={images.gitHubLogo} iconClass="desktop__github__icon" textClass="desktop__github__text" formClass="desktop__github" link="https://github.com/JamesSheppardd" />
             {/* Contact Me button */}
-            <DesktopButton className="desktop__contact" text="Contact Me" icon={images.mailIcon} iconClass="desktop__contact__icon" textClass="desktop__contact__text" formClass="desktop__contact" openWindow={triggerOpenProjectsFolderState}/>
+            <DesktopButton className="desktop__contact" text="Contact Me" icon={images.mailIcon} iconClass="desktop__contact__icon" textClass="desktop__contact__text" formClass="desktop__contact" link="mailto:jamesasheppard9@gmail.com"/>
             
 
             {/* Opening Projects folder */}

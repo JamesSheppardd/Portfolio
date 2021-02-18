@@ -16,7 +16,7 @@ code {
     monospace;
 }
 
-.window-header:hover {
+.drag-area:hover {
   cursor: url("./Components/Common/assets/images/cursors/cursor-move.png") 15 17, move;
 }
 
