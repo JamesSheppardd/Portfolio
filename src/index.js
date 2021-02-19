@@ -25,9 +25,8 @@ class App extends Component {
   render() {
     return (
       <React.StrictMode>
-        <Taskbar time={this.state.time}/>
         <Desktop />
-
+        <Taskbar time={this.state.time}/>
         <CrtEffect />
       </React.StrictMode>
     )

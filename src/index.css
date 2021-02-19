@@ -28,8 +28,16 @@ code {
   cursor: url("./Components/Common/assets/images/cursors/cursor-text.png") 15 17, text;
 }
 
+.start-menu-object:hover {
+  cursor: url("./Components/Common/assets/images/cursors/cursor-pointer.png") 12 2, pointer;
+}
+.start-menu-object:active {
+  background: #0000a8;
+  color: #fefefe;
+}
+
 a:hover {
-  cursor: url("./Components/Common/assets/images/cursors/cursor-pointer.png") 12 2, auto;
+  cursor: url("./Components/Common/assets/images/cursors/cursor-pointer.png") 12 2, pointer;
 }
 
 button:hover {
