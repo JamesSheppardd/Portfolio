@@ -92,7 +92,7 @@ const WindowInnerObject = props => {
 
     return (
         <WindowInnerObjectStyled offset={props.offset}>
-            <img src={determineIcon()} alt={props.type} style={{width: 20}}></img>
+            <img src={determineIcon()} alt={props.type} width= {20}></img>
             <span style={{paddingLeft:7}}>{props.name}</span>
             <span style={{position: "absolute", right:405}}>{determineSize()}{determineSizeAcronym()}</span>
             <span style={{position: "absolute", left:390}}>{props.type}</span>
@@ -109,6 +109,11 @@ const WindowInnerObjectContainer = styled.div`
 const WindowInner = props => {
 
     const passData = (object, name) => {
+        // Make window no longer active
+        const activeObjects = document.getElementsByClassName("active");
+        for(var i = 0; i < activeObjects.length; i++){
+            activeObjects[i].classList.remove("active");
+        };
         // Open the folder
         props.openFolder(object, props.setObjects, props.setCurrentFolderName);
         console.log(name);

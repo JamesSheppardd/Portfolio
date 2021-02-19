@@ -97,10 +97,10 @@ const Window = props => {
 
     return (
       <Draggable bounds="parent" handle="strong" >
-        <StyledWindow className={`${props.className}__window`} leftPos={props.leftPos} topPos={props.topPos} padding={400} onMouseDownCapture={changeToActive} >
-          <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
+        <StyledWindow className={`${props.className}__window active`} leftPos={props.leftPos} topPos={props.topPos} padding={400} onMouseDownCapture={changeToActive} >
+          
           <strong className={`${props.className}__drag drag-area`}>
-            <div style={{position: "absolute", left: 10, right: 100, top: 6, height: 30}}></div>
+            <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
           </strong>
           
           

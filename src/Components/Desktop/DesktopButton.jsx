@@ -23,6 +23,8 @@ const DesktopButtonStyled = styled.form`
 
 const DesktopButton = props => {
     const openText = (object) => {
+        // Make window no longer active
+        //
         props.openWindow(object);
         (props.setFilename && props.setFilename(object));
         
@@ -37,7 +39,7 @@ const DesktopButton = props => {
       }
 
     return (
-        <div style={{paddingTop: 10, paddingBottom: 130, paddingLeft: 30 }}>
+        <div style={{paddingTop: 10, paddingBottom: 125, paddingLeft: 30 }}>
             {props.openWindow && <DesktopButtonStyled className={props.formClass} onDoubleClick={() => openText(props.text)}>
                 <img src={props.icon} className={`image ${props.iconClass}`} alt="icon" style={{display: "block", width: 64, marginLeft: "auto", marginRight: "auto"}} ></img>
                 <p className={props.textClass} style={{textAlign: "center"}} >{props.text}</p>
