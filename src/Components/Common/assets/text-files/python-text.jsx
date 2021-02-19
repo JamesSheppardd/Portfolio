@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
 
 const PythonText = () => {
     return (
-        <StyledDiv>
+        <StyledDiv className="active">
             <p>
             I started using python very basically at around 10, and after about 2 weeks dropped it, as I didn’t understand any of it. However, a couple of years later we started using it in school, and ever since I 
             was around 14, I have used it quite a bit. I have made many small programs, mainly for my iGCSE exams and practice exams, but have also made a very basic password generator and storage system, as well as 

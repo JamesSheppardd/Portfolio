@@ -23,7 +23,7 @@ const CurrentWeatherApp = () => {
             <h2><a href="https://github.com/JamesSheppardd/CurrentWeather" target="_blank" rel="noreferrer">Click here to view it's Github repository.</a></h2>
             <br />
             <br />
-            <h2 style={{textDecoration: "underline"}}>Here's are some screenshots</h2> 
+            <h2 style={{textDecoration: "underline"}}>Here's some screenshots</h2> 
             <img src={img1} alt="1" width={600} />
             <br />
             <img src={img2} alt="2" width={600} />
