@@ -39,6 +39,8 @@ export const createBorderStylesStatus = () =>
         border-bottom-color: ${themes.default.borderLightest};
     `;
 
+
+  
 export const createBorderStylesInner = () => 
     css `
         border-style: solid;
@@ -52,3 +54,24 @@ export const createBorderStylesInner = () =>
             ${themes.default.borderDarkest},
           inset -1px -1px 0 1px ${themes.default.borderLight};
     `;
+
+// Taskbar 
+export const createBorderStylesTaskbar = () => 
+  css`
+    border-top-style: solid;
+    border-top-width: 0.2vw;
+    border-top-color: ${themes.default.borderLight};
+    box-shadow: inset 0px 0.22vw 0px
+        0px
+        ${themes.default.borderLightest};
+
+  `;
+export const createBorderStylesTaskbarInset = () => 
+  css`
+    border-style: solid;
+    border-width: 0.15vw;
+    border-left-color: ${themes.default.borderDark};
+    border-top-color: ${themes.default.borderDark};
+    border-right-color: ${themes.default.borderLightest};
+    border-bottom-color: ${themes.default.borderLightest};
+  `;
