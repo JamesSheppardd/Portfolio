@@ -12,9 +12,9 @@ const WindowHeaderStyled = styled.div`
   display: inline-block;
   position: absolute;
   right: 10px;
-  height: 30px;
   top: 10px;
   left: 10px;
+  height: 30px;
   background: ${themes.default.headerBackground}; 
 `;
 
@@ -30,7 +30,7 @@ const WindowHeaderStyledButton = styled.button`
 `;
 
 const WindowHeaderContent = props => {
-
+  let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 480px)").matches;
   const determineHeaderImage = () => {
     switch(props.windowType){
       case "text-document":
@@ -57,10 +57,14 @@ const WindowHeaderContent = props => {
       >
         {props.currentFolderName}
       </span>
-
-      <WindowHeaderStyledButton className={`${props.className}--exit`} buttonType={exitButton} rightOffset={6} onClick={props.close} />
-      <WindowHeaderStyledButton className={`${props.className}--maximise`} buttonType={maxButton} rightOffset= {34} />
-      <WindowHeaderStyledButton className={`${props.className}--minimise`} buttonType={minButton} rightOffset= {62} />
+      {/* If it isn't a phone */}
+      {!isPhone && <WindowHeaderStyledButton className={`${props.className}--exit window-header-button`} buttonType={exitButton} rightOffset={6} onClick={props.close} />}
+      {!isPhone && <WindowHeaderStyledButton className={`${props.className}--maximise window-header-button`} buttonType={maxButton} rightOffset= {34} />}
+      {!isPhone && <WindowHeaderStyledButton className={`${props.className}--minimise window-header-button`} buttonType={minButton} rightOffset= {62} />}
+      {/* If it IS a phone - changes rightOffset */}
+      {isPhone && <WindowHeaderStyledButton className={`${props.className}--exit window-header-button`} buttonType={exitButton} rightOffset={6} onClick={props.close} />}
+      {isPhone && <WindowHeaderStyledButton className={`${props.className}--maximise window-header-button`} buttonType={maxButton} rightOffset= {34} />}
+      {isPhone && <WindowHeaderStyledButton className={`${props.className}--minimise window-header-button`} buttonType={minButton} rightOffset= {62} />}
     </div>
     
   )

@@ -14,11 +14,9 @@ const Desktop = (props) => {
     const [languagesFolder, setLanguagesFolder] = useState(false);
     const [socialsFolder, setSocialsFolder] = useState(false);
     const [folderOpen, setFolderOpen] = useState(false);
-    const [aboutMeTextOpen, setAboutMeTextOpen] = useState(false);
     const [textContent, setTextContent] = useState(undefined);
     const [textOpen, setTextOpen] = useState(false);
     const [filename, setFilename] = useState(undefined);
-    const [activeWindow, setActiveWindow] = useState("");
     const [zInd, setZInd] = useState(3);
 
     

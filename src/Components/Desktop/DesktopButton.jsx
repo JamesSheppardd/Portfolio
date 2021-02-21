@@ -13,11 +13,11 @@ const DesktopButtonHover = () => css`
 
 const DesktopButtonStyled = styled.form`
     position: absolute;
-    padding-bottom: 10px;
     color: ${themes.default.materialTextInvert};
     letter-spacing: 2px;
     font-size: 20px;
     width: 105px;
+    height: 90px;
     ${DesktopButtonHover()}
 `;
 
@@ -39,15 +39,15 @@ const DesktopButton = props => {
       }
 
     return (
-        <div style={{paddingTop: 10, paddingBottom: 125, paddingLeft: 30 }}>
+        <div className={`${props.className}--div desktop__button--div`} style={{position: "relative",paddingTop: 15}}>
             {props.openWindow && <DesktopButtonStyled className={props.formClass} onDoubleClick={() => openText(props.text)}>
                 <img src={props.icon} className={`image ${props.iconClass}`} alt="icon" style={{display: "block", width: 64, marginLeft: "auto", marginRight: "auto"}} ></img>
-                <p className={props.textClass} style={{textAlign: "center"}} >{props.text}</p>
+                <p className={props.textClass} style={{textAlign: "center", position: "relative", top: -20}} >{props.text}</p>
             </DesktopButtonStyled>}
             
             {props.link && <DesktopButtonStyled className={props.formClass} onDoubleClick={openTab}>
                 <img src={props.icon} className={`image ${props.iconClass}`} alt="icon" style={{display: "block", width: 64, marginLeft: "auto", marginRight: "auto"}} ></img>
-                <p className={props.textClass} style={{textAlign: "center"}} >{props.text}</p>
+                <p className={props.textClass} style={{textAlign: "center",  position: "relative", top: -20}} >{props.text}</p>
             </DesktopButtonStyled>}
         </div>
     )

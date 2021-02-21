@@ -13,20 +13,19 @@ const StyledWindow = styled.div`
     top: 75px;
     right: 10px;
     bottom: 60px;
-    font-size: 1rem;
     ${createBorderStylesInner()}
     ${createInnerBoxStyles()}
 `;
 
 const SelectorButton = styled.button`
     position: absolute;
-    width: ${props => props.buttonWidth}px;
+    width: ${props => props.buttonWidth}%;
     height: 30px;
-    left: ${props => props.offset}px;
+    left: ${props => props.offset}%;
     top: 79px;
     text-align: start;
     font-size: 19px;
-    text-indent: ${props => props.textIndent}px;
+    text-indent: ${props => props.textIndent}%;
     background-color: ${themes.default.material};
 `;
 
@@ -94,9 +93,9 @@ const WindowInnerObject = props => {
         <WindowInnerObjectStyled offset={props.offset}>
             <img src={determineIcon()} alt={props.type} width= {20}></img>
             <span style={{paddingLeft:7}}>{props.name}</span>
-            <span style={{position: "absolute", right:405}}>{determineSize()}{determineSizeAcronym()}</span>
-            <span style={{position: "absolute", left:390}}>{props.type}</span>
-            <span style={{position: "absolute", left:595}}>{props.modified}</span>
+            {!props.isPhone && <span style={{position: "absolute", right: 340}}>{determineSize()}{determineSizeAcronym()}</span>}
+            {!props.isPhone && <span style={{position: "absolute", left:400}}>{props.type}</span>}
+            {!props.isPhone && <span style={{position: "absolute", left:550}}>{props.modified}</span>}
         </WindowInnerObjectStyled>
         
     )
@@ -107,6 +106,7 @@ const WindowInnerObjectContainer = styled.div`
 `;
 
 const WindowInner = props => {
+    let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 480px)").matches;
 
     const passData = (object, name) => {
         // Make window no longer active
@@ -129,18 +129,20 @@ const WindowInner = props => {
     return (
         <div className={props.className} style={{height: 0}}>
             {/* File explorer window */}
-            {props.isFileExplorer && <StyledWindow className={`${props.className}--window`} />}
+            {props.isFileExplorer && <StyledWindow className={`${props.className}--window window--inner`} />}
             {props.isFileExplorer && <div className={`${props.className}--button`}>
-                <SelectorButton offset={14} buttonWidth={238} textIndent={10} className={`${props.className}--button__name`} >Name</SelectorButton>
-                <SelectorButton offset={252} buttonWidth={140} textIndent={100} className={`${props.className}--button__size`}>Size</SelectorButton>
-                <SelectorButton offset={392} buttonWidth={200} textIndent={10} className={`${props.className}--button__type`}>Type</SelectorButton>
-                <SelectorButton offset={592} buttonWidth={194} textIndent={10} className={`${props.className}--button__modified`}>Modified</SelectorButton>
+                {!isPhone && <SelectorButton offset={1.8} buttonWidth={38} textIndent={0} className={`${props.className}--button__name`} >Name</SelectorButton>}
+                {!isPhone && <SelectorButton offset={39.8} buttonWidth={14.1} textIndent={65} className={`${props.className}--button__size`}>Size</SelectorButton>}
+                {!isPhone && <SelectorButton offset={53.9} buttonWidth={20} textIndent={0} className={`${props.className}--button__type`}>Type</SelectorButton>}
+                {!isPhone && <SelectorButton offset={73.9} buttonWidth={24.6} textIndent={0} className={`${props.className}--button__modified`}>Modified</SelectorButton>}
+                
+                {isPhone && <SelectorButton offset={4.3} buttonWidth={91.95} textIndent={0} className={`${props.className}--button__name`} >Name</SelectorButton>}
             </div>}
 
             {props.isFileExplorer && <div className={`${props.className}--container`} style={{position: "absolute", top: 114, left: 14, right: 14}}>
                 {props.objects.map(object => (
                     <WindowInnerObjectContainer className={`${props.className}--object__${object.name}`} onDoubleClick={() => passData(object, object.name)} >
-                        <WindowInnerObject name={object.name} size={object.size} type={object.type} modified={object.modified} offset={115} />
+                        <WindowInnerObject name={object.name} size={object.size} type={object.type} modified={object.modified} offset={115} isPhone={isPhone} />
                     </WindowInnerObjectContainer>
                 ))}
             </div>

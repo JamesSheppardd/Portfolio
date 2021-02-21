@@ -6,7 +6,9 @@ const SelectorButton = styled.button`
     position: absolute;
     padding: 2px 10px;
     left: 0.3%;
-    top: 12%;display: inline-block;
+    top: 12%;
+    bottom: 7%;
+    display: inline-block;
     vertical-align: middle;
     text-align: center;
     font-size: 26px;

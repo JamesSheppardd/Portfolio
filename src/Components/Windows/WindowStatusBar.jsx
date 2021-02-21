@@ -5,11 +5,10 @@ import { relativeTimeRounding } from "moment";
 
 const StatusBarObjectsStyled = styled.div`
     position: absolute;
-    top: 750px;
-    left: ${props => props.leftOffset}px;
-    bottom: 790px;
-    width: ${props => props.width}px;
-    height: 40px;
+    
+    left: ${props => props.leftOffset}%;
+    width: ${props => props.width}%;
+    
     font-size: 22px;
     ${createBorderStylesStatus()}
     ${createBoxStyles()}
@@ -75,15 +74,30 @@ const StatusBarSizeContent = props => {
 }
 
 const StatusBar = props =>{
+    let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 480px)").matches;
     return (
-        <div className={`${props.className}`}>
-            <StatusBarObjectsStyled className={`${props.className}--object-num`} leftOffset={10} width={300}>
-                <StatusBarObjectsContent objectsLength={props.objectsLength} />
-            </StatusBarObjectsStyled>
+        <div>
+        {/* If it isn't a phone */}
+            {!isPhone && <div className={`${props.className}`}>
+                <StatusBarObjectsStyled className={`${props.className}--object-num status-bar-box`} leftOffset={1.4} width={45.4}>
+                    <StatusBarObjectsContent objectsLength={props.objectsLength} />
+                </StatusBarObjectsStyled>
 
-            <StatusBarObjectsStyled className={`${props.className}--folder-size`} leftOffset={320} width={470}>
-                <StatusBarSizeContent objectsSize={props.objectsSize} />
-            </StatusBarObjectsStyled>
+                <StatusBarObjectsStyled className={`${props.className}--folder-size status-bar-box`} leftOffset={48} width={50.8}>
+                    <StatusBarSizeContent objectsSize={props.objectsSize} />
+                </StatusBarObjectsStyled>
+        </div>}
+
+        {/* If it is a phone */}
+        {isPhone && <div className={`${props.className}`}>
+        <StatusBarObjectsStyled className={`${props.className}--object-num status-bar-box`} leftOffset={3} width={43.4}>
+            <StatusBarObjectsContent objectsLength={props.objectsLength} />
+        </StatusBarObjectsStyled>
+
+        <StatusBarObjectsStyled className={`${props.className}--folder-size status-bar-box`} leftOffset={48} width={49.2}>
+            <StatusBarSizeContent objectsSize={props.objectsSize} />
+        </StatusBarObjectsStyled>
+</div>}
         </div>
     )
 }

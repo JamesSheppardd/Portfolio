@@ -30,9 +30,6 @@ export const newObject = (name, size, type, modified) => {
 
 const StyledWindow = styled.div`
     position: absolute;
-    left: ${props => props.leftPos}%;
-    top: ${props => props.topPos}%;
-    padding: ${props => props.padding}px;
     font-size: 1rem;
     ${createBorderStyles()}
     ${createBoxStyles()}
@@ -67,6 +64,8 @@ const ResizeHandle = styled.span`
 `;
 
 const Window = props => {
+  let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 480px)").matches;
+
   const [objects, setObjects] = useState(props.objects);
   const [currentFolderName, setCurrentFolderName] = useState(props.currentFolderName);
   const [windowMaximise, setWindowMaximise] = useState(false);
@@ -92,30 +91,44 @@ const Window = props => {
       }
     };
     newActive.classList.add("active");
-    console.log(o)
   }
 
     return (
-      <Draggable bounds="parent" handle="strong" >
-        <StyledWindow className={`${props.className}__window active`} leftPos={props.leftPos} topPos={props.topPos} padding={400} onMouseDownCapture={changeToActive} >
-          
-          <strong className={`${props.className}__drag drag-area`}>
-            <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
-          </strong>
-          
-          
-          <WindowOptions className={`${props.className}__options`} />
-          <WindowInner className={`${props.className}__inner`} objects={objects} openFolder={openFolder} setObjects={setObjects} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} openText={openText} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />
-          
-          <ResizeHandle className={`${props.className}__resize`} data-testid="resizeHandle" />
-
-          {/* If it is a file explorer window */}
-          {props.isFileExplorer && 
-            <StatusBar className={`${props.className}__status-bar`} objectsLength={objects.length} objectsSize={objects.map(object => object.size)} />
-          }
-        </StyledWindow>
-      </Draggable>
+      <div style={{width: "100%", height: "94.3vh"}}>
+        {!isPhone && 
+          <Draggable bounds="parent" handle="strong" >
+            <StyledWindow className={`${props.className}__window window active`} leftPos={props.leftPos} topPos={props.topPos} onMouseDownCapture={changeToActive} >
+              <WindowOptions className={`${props.className}__options`} />
+              <strong className={`${props.className}__drag drag-area`}>
+                <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
+              </strong>
+              <WindowInner className={`${props.className}__inner`} objects={objects} openFolder={openFolder} setObjects={setObjects} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} openText={openText} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />
+              
+              {/* If it is a file explorer window */}
+              {props.isFileExplorer && 
+                <StatusBar className={`${props.className}__status-bar`} objectsLength={objects.length} objectsSize={objects.map(object => object.size)} />
+              }
+              <ResizeHandle className={`${props.className}__resize`} data-testid="resizeHandle" />
+            </StyledWindow>
+          </Draggable>}
         
+        {/* If is a phone, no draggable window */}
+        {isPhone && 
+          <StyledWindow className={`${props.className}__window window active`} leftPos={props.leftPos} topPos={props.topPos} onMouseDownCapture={changeToActive} >
+            <WindowOptions className={`${props.className}__options`} />
+            <strong className={`${props.className}__drag drag-area`}>
+              <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} maximise={triggerWindowMaximiseState} windowType={props.className} />
+            </strong>
+            <WindowInner className={`${props.className}__inner`} objects={objects} openFolder={openFolder} setObjects={setObjects} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} openText={openText} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />
+            
+            {/* If it is a file explorer window */}
+            {props.isFileExplorer && 
+              <StatusBar className={`${props.className}__status-bar`} objectsLength={objects.length} objectsSize={objects.map(object => object.size)} />
+            }
+            <ResizeHandle className={`${props.className}__resize`} data-testid="resizeHandle" />
+          </StyledWindow>}
+        
+      </div>
     );
 };
 export default Window;

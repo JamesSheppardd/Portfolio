@@ -9,14 +9,13 @@ const StyledStartMenu = styled.div`
     left: 0.3%;
     bottom: 4.6%;
     top: 45%;
-    right: 83%;
+    
+    z-index: 9999;
     ${createBorderStyles()}
     ${createBoxStyles()}
 `;
 
 const StyledObjects = styled.div`
-    padding-top: 9px;
-    padding-bottom: 15px;
     padding-left: 3px;
     width: 98%;
     border-bottom-style: solid;
@@ -25,7 +24,6 @@ const StyledObjects = styled.div`
     box-shadow: 0px 0.15vw 0px
         0px
         ${themes.default.borderLightest};
-    font-size: 22px;
 `;
 
 const StartMenuObjects = props => {
@@ -54,18 +52,43 @@ const StartMenuObjects = props => {
         }
     }
 
+    const openDocument = (object) => {
+        // Make window no longer active
+        const activeObjects = document.getElementsByClassName("active");
+        for(var i = 0; i < activeObjects.length; i++){
+            activeObjects[i].classList.remove("active");
+        };
+        // Open the folder
+        //props.openFolder(object, props.setObjects, props.setCurrentFolderName);
+        const classNames = object.target.className.split(" ");
+        let newFilename = classNames;
+        if(classNames.length > 4){
+            newFilename = `${classNames[classNames.length - 2]} ${classNames[classNames.length - 1]}`
+            props.setFilename(newFilename);
+            props.openDocument(object);
+        } else{
+            newFilename = classNames[classNames.length - 1];
+            props.setFilename(newFilename);
+            props.openDocument(object);
+        }
+
+
+        
+        
+    }
+
     return (
         <div>
         {!props.link && 
-            <StyledObjects className="start-menu-object">
-                <img src={determineIcon()} alt={props.type} width={30} style={{position: "relative"}}></img>
-                <span style={{paddingLeft:7}}>{props.name}</span>
+            <StyledObjects className={`start-menu-object ${props.name}`} onClick={openDocument}>
+                <img className="start-menu-object-icon" src={determineIcon()} alt={props.type} width={30} style={{position: "relative"} }></img>
+                <span style={{position: "absolute", paddingLeft:7, paddingTop: 9}}>{props.name}</span>
             </StyledObjects>}
 
         {props.link && 
             <StyledObjects className="start-menu-object" onClick={openTab}>
-                <img src={determineIcon()} alt={props.type} width={30} style={{position: "relative"}}></img>
-                <span style={{paddingLeft:7}}>{props.name}</span>
+                <span><img className="start-menu-object-icon" src={determineIcon()} alt={props.type} width={30} style={{position: "relative"}}></img></span>
+                <span style={{position: "absolute", paddingLeft:7, paddingTop: 9}}>{props.name}</span>
             </StyledObjects>}
         
         </div>
@@ -74,15 +97,15 @@ const StartMenuObjects = props => {
     )
 }
 
-const StartMenu = () => {
+const StartMenu = props => {
 
     return (
-        <StyledStartMenu>
-            <StartMenuObjects name="GitHub" type="Github" link="https://github.com/JamesSheppardd"></StartMenuObjects>
-            <StartMenuObjects name="Favourite Projects" type="File Folder"></StartMenuObjects>
-            <StartMenuObjects name="CV" type="Text Document"></StartMenuObjects>
-            <StartMenuObjects name="Source Code" type="Github" link="https://github.com/JamesSheppardd/Portfolio"></StartMenuObjects>
-            <StartMenuObjects name="Contact Me" type="Mail" link="mailto:jamesasheppard9@gmail.com"></StartMenuObjects>
+        <StyledStartMenu className="start-menu">
+            <StartMenuObjects name="GitHub" type="Github" link="https://github.com/JamesSheppardd" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
+            <StartMenuObjects name="Favourite Projects" type="File Folder" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
+            <StartMenuObjects name="CV" type="Text Document" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
+            <StartMenuObjects name="Source Code" type="Github" link="https://github.com/JamesSheppardd/Portfolio" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
+            <StartMenuObjects name="Contact Me" type="Mail" link="mailto:jamesasheppard9@gmail.com" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
             
         </StyledStartMenu>
     )
