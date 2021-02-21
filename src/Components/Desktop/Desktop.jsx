@@ -1,9 +1,7 @@
 import { useState } from "react";
 import DesktopButton from "./DesktopButton";
 import Window from "../Windows/Window";
-import { css } from "styled-components";
 // text files
-import AboutMeText from "../Common/assets/text-files/about-me";
 import determineTextDocument from "./determine-text-document";
 
 // Assets
@@ -17,7 +15,6 @@ const Desktop = (props) => {
     const [textContent, setTextContent] = useState(undefined);
     const [textOpen, setTextOpen] = useState(false);
     const [filename, setFilename] = useState(undefined);
-    const [zInd, setZInd] = useState(3);
 
     
 
@@ -45,11 +42,6 @@ const Desktop = (props) => {
     const triggerSetFilename = (name) => {
         setFilename(() => name);
         
-    }
-
-    const triggerSetZInd = () => {
-        setZInd(prevState => prevState += 1);
-        console.log(zInd)
     }
 
     const activeWindowCSS = (window) => {

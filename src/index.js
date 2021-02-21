@@ -6,7 +6,6 @@ import Taskbar from "./Components/Taskbar/Taskbar.jsx";
 import Desktop from "./Components/Desktop/Desktop.jsx";
 import CrtEffect from "./Components/Effects/CrtEffect.jsx";
 import Welcome from "./Components/Welcome/Welcome.jsx";
-import "./styles/styles.scss";
 
 class App extends Component {
 
