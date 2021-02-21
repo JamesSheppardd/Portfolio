@@ -13,6 +13,11 @@ const determineTextDocument = (filename) => {
             return <text.WebDevText className={`text-document__${filename}`} filename={filename} />;
         case "Portfolio":
             return <text.PortfolioText className={`text-document__${filename}`} filename={filename} />;
+        case "C#":
+            return <text.CSText className={`text-document__${filename}`} filename={filename} />;
+        case "GML":
+            return <text.GMLText className={`text-document__${filename}`} filename={filename} />;
+            
         default:
             break;
     }

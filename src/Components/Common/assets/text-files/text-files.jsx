@@ -4,5 +4,7 @@ import CurrentWeatherApp from "./projects/current-weather-app/current-weather-ap
 import PythonText from "./python-text";
 import WebDevText from "./web-dev-text";
 import PortfolioText from "./projects/portfolio/portfolio-text";
+import CSText from "./c#-text";
+import GMLText from "./gml-text";
 
-export { AboutMeText, CurrentWeatherApp, PythonText, WebDevText, PortfolioText };
+export { AboutMeText, CurrentWeatherApp, PythonText, WebDevText, PortfolioText, CSText, GMLText };

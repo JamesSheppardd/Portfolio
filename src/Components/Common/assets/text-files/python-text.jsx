@@ -18,6 +18,11 @@ const PythonText = () => {
             <p>
             I would say I am moderately skilled in python, as there is definitely a lot more to learn, but I can pass and due to using other languages understand many of the concepts pretty well.
             </p>
+
+            <h2><u>Notable projects:</u></h2>
+            <ul>
+            
+            </ul>
         </StyledDiv>
         
     )

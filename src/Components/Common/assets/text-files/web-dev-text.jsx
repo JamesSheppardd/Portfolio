@@ -20,6 +20,11 @@ const WebDevText = () => {
             enjoyable time learning about using components, and using some state hooks. All in all, I would say for the time I have spent making this website, I am proud of how it has come out, and think it fits 
             with my retro ‘Windows 95’ feel.
             </p>
+
+            <h2><u>Notable projects:</u></h2>
+            <ul>
+                <li><a href="https://github.com/JamesSheppardd/Portfolio" target="_blank" rel="noreferrer">Portfolio</a></li>
+            </ul>
         </StyledDiv>
         
     )
