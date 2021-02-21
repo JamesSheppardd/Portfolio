@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import themes from "../Common/themes";
+import styled from "styled-components";
 import { createBorderStylesInner, createInnerBoxStyles } from "../Common/index";
 // Assets
 import tipOfDay from "../Common/assets/images/icons/Tip of the Day.ico" 
@@ -17,20 +16,9 @@ const StyledWindow = styled.div`
     overflow: auto;
 `;
 
-const SelectorButton = styled.button`
-    position: absolute;
-    width: ${props => props.buttonWidth}%;
-    height: 30px;
-    left: ${props => props.offset}%;
-    top: 79px;
-    text-align: start;
-    font-size: 19px;
-    text-indent: ${props => props.textIndent}%;
-    background-color: ${themes.default.material};
-`;
 
 const WindowInner = props => {
-    let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 480px)").matches;
+    //let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 480px)").matches;
 
 
     return (

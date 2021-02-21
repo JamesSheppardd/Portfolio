@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import themes from "../Common/themes";
 import { createBorderStylesStatus, createBoxStyles } from "../Common/index";
-import { relativeTimeRounding } from "moment";
 
 const StatusBarObjectsStyled = styled.div`
     position: absolute;

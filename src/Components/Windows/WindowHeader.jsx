@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import themes from "../Common/themes";
 // Asssets import
-import folderImage from "../Common/assets/images/Folder.png";
 import minButton from "../Common/assets/images/MinimiseButton.png";
 import maxButton from "../Common/assets/images/MaximiseButton.png";
 import exitButton from "../Common/assets/images/ExitButton.png";

@@ -15,7 +15,7 @@ const Desktop = (props) => {
     const [textContent, setTextContent] = useState(undefined);
     const [textOpen, setTextOpen] = useState(false);
     const [filename, setFilename] = useState(undefined);
-
+    
     
 
     const triggerOpenProjectsFolderState = (setTo) => {
@@ -31,6 +31,7 @@ const Desktop = (props) => {
 
     const triggerOpenFolderState = (newFolder) => {
         setFolderOpen(prevFolder => !prevFolder);
+        console.log(folderOpen);
     }
 
     const triggerOpenTextDocument = (newContent) => {

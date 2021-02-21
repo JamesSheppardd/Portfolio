@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Time from "./Time/Time";
 import StartButton from "./StartButton";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { createBorderStylesTaskbar, createBoxStyles, createBorderStylesTaskbarInset } from "../Common/index";
 import StartMenu from "./StartMenu";
 import Window from "../Windows/Window";

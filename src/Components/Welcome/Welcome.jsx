@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { createBorderStyles, createBoxStyles } from "../Common/index";
 import WelcomeWindow from "./WelcomeWindow";
 
