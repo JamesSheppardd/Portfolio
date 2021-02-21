@@ -1,8 +1,7 @@
-import { buildQueries } from "@testing-library/react";
 import React, { useState } from "react";
 import Draggable from 'react-draggable';
 
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { createBorderStyles, createBoxStyles } from "../Common/index";
 import themes from "../Common/themes";
 // Components

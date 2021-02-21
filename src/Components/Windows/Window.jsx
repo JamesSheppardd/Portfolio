@@ -1,4 +1,3 @@
-import { buildQueries } from "@testing-library/react";
 import React, { useState } from "react";
 import Draggable from 'react-draggable';
 
@@ -11,8 +10,6 @@ import WindowHeader from "./WindowHeader";
 import WindowInner from "./WindowInner";
 import WindowOptions from "./WindowOptions";
 import StatusBar from "./WindowStatusBar";
-// Cursors
-import moveCursor from "../Common/assets/images/cursors/cursor-move.png";
 
 
 
