@@ -96,10 +96,10 @@ const Desktop = (props) => {
                 openText={triggerOpenTextDocument}
                 setFilename={triggerSetFilename}
                 objects={[
-                    {"name": "Python", "size": 2000, "type": "Text Document", "modified": "ayer"}, 
-                    {"name": "HTML/CSS/JS", "size": 700000, "type": "Text Document", "modified": "nachste woche"},
-                    {"name": "C#", "size": 90000, "type": "Text Document", "modified": "0:06 AM"},
-                    {"name": "GML", "size": 80000, "type": "Text Document", "modified": "0:06 AM"}
+                    {"name": "Python", "size": 2000, "type": "Text Document", "modified": "22 February 2021"}, 
+                    {"name": "HTML/CSS/JS", "size": 700000, "type": "Text Document", "modified": "22 February 2021"},
+                    {"name": "C#", "size": 90000, "type": "Text Document", "modified": "22 February 2021"},
+                    {"name": "GML", "size": 80000, "type": "Text Document", "modified": "22 February 2021"}
                 ]}
             /> }
 
