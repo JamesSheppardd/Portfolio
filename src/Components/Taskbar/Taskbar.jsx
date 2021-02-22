@@ -23,10 +23,10 @@ const TaskbarInset = styled.div`
     position: absolute;
     display: flex;
     right: 0.3%;
-    top: 12%;
+    top: 13%;
     right: 1%;
     bottom: 7%;
-    left: 70%;
+    width: 100px;
     font-size: 1rem;
     ${createBorderStylesTaskbarInset()}
     ${createBoxStyles()}

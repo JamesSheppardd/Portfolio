@@ -105,7 +105,7 @@ const StartMenu = props => {
             <StartMenuObjects name="Favourite Projects" type="File Folder" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
             <StartMenuObjects name="CV" type="Text Document" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
             <StartMenuObjects name="Source Code" type="Github" link="https://github.com/JamesSheppardd/Portfolio" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
-            <StartMenuObjects name="Contact Me" type="Mail" link="mailto:jamesasheppard9@gmail.com" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
+            <StartMenuObjects name="Contact Me" type="Mail" link="mailto:James@jamessheppard.net" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
             
         </StyledStartMenu>
     )

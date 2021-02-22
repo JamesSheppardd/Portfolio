@@ -62,7 +62,7 @@ const Desktop = (props) => {
             {/* GitHub button */}
             <DesktopButton className="desktop__github" text="GitHub" icon={images.gitHubLogo} iconClass="desktop__github__icon" textClass="desktop__github__text" formClass="desktop__github" link="https://github.com/JamesSheppardd" />
             {/* Contact Me button */}
-            <DesktopButton className="desktop__contact" text="Contact Me" icon={images.mailIcon} iconClass="desktop__contact__icon" textClass="desktop__contact__text" formClass="desktop__contact" link="mailto:jamesasheppard9@gmail.com"/>
+            <DesktopButton className="desktop__contact" text="Contact Me" icon={images.mailIcon} iconClass="desktop__contact__icon" textClass="desktop__contact__text" formClass="desktop__contact" link="mailto:James@jamessheppard.net"/>
             
 
             {/* Opening Projects folder */}

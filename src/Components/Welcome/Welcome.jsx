@@ -6,7 +6,7 @@ const StyledWelcome = styled.div`
     top: 10%;
     left: 5%;
     height: 100%;
-    width: 100%;
+    width: 100.2%;
     ${createBorderStyles()}
     ${createBoxStyles()}
 `

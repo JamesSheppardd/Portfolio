@@ -13,7 +13,7 @@ import WelcomeWindowInner from "./WelcomeWindowInner";
 const StyledWindow = styled.div`
     position: absolute;
     left: 11%;
-    width: 78%;
+    width: 70%;
     height: 65%;
     font-size: 1rem;
     ${createBorderStyles()}
@@ -23,9 +23,9 @@ const StyledWindow = styled.div`
 
 const SelectorButton = styled.button`
     position: absolute;
-    width: 21%;
-    height: 6%;
-    right: 5%;
+    width: 230px;
+    height: 35px;
+    right: 32px;
     text-align: center;
     font-size: 19px;
     background-color: ${themes.default.material};
@@ -56,7 +56,7 @@ const WelcomeWindow = props => {
   }
 
   const openContact = () => {
-    window.open("mailto:jamesasheppard9@gmail.com", "_self");
+    window.open("mailto:James@jamessheppard.net", "_self");
   }
 
     return (
@@ -71,16 +71,16 @@ const WelcomeWindow = props => {
 
               <Title>Welcome to <TitleBold>Sheppard</TitleBold> <TitleWhite>95</TitleWhite></Title>
 
-              <div style={{}}>
+              <div>
                 <SelectorButton className="welcome-button welcome-button__whats-new">What's <u>N</u>ew</SelectorButton>
               </div>
-              <div style={{paddingTop: "5%"}}>
+              <div style={{paddingTop: 50}}>
                 <SelectorButton className="welcome-button welcome-button__github" onClick={openGithub}><u>G</u>ithub</SelectorButton>
               </div>
-              <div style={{paddingTop: "5%"}}>
+              <div style={{paddingTop: 50}}>
                 <SelectorButton className="welcome-button welcome-button__contact-me" onClick={openContact}>Contact <u>M</u>e</SelectorButton>
               </div>
-              <div style={{paddingTop: "23%"}}>
+              <div style={{position: "absolute", bottom: "10%", right:6}}>
                 <SelectorButton className="welcome-button welcome-button__close" onClick={props.close}>Close</SelectorButton>
               </div>
               
