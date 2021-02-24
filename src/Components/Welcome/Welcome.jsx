@@ -14,6 +14,7 @@ const StyledWelcome = styled.div`
 const Welcome = props => {
     return (
         <StyledWelcome>
+            <div style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9998}} onClick={props.close}></div>
             <WelcomeWindow
                 currentFolderName="Welcome"
                 close={props.close}

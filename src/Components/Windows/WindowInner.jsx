@@ -21,7 +21,7 @@ const SelectorButton = styled.button`
     position: absolute;
     width: ${props => props.buttonWidth}%;
     height: 30px;
-    left: ${props => props.offset}%;
+    left: ${props => props.offset}%;    
     top: 79px;
     text-align: start;
     font-size: 19px;
@@ -41,7 +41,7 @@ const WindowInnerObjectStyled = styled.div`
     display: flex;
     left: 16px;
     right: 16px;
-    font-size: 20px;
+    font-size: 19.7px;
     ${WindowInnerObjectStyledActive()}
 `
 
@@ -93,9 +93,9 @@ const WindowInnerObject = props => {
         <WindowInnerObjectStyled offset={props.offset}>
             <img src={determineIcon()} alt={props.type} width= {20}></img>
             <span style={{paddingLeft:7}}>{props.name}</span>
-            {!props.isPhone && <span style={{position: "absolute", right: 340}}>{determineSize()}{determineSizeAcronym()}</span>}
-            {!props.isPhone && <span style={{position: "absolute", left:400}}>{props.type}</span>}
-            {!props.isPhone && <span style={{position: "absolute", left:550}}>{props.modified}</span>}
+            {!props.isPhone && <span style={{position: "absolute", right: "48%"}}>{determineSize()}{determineSizeAcronym()}</span>}
+            {!props.isPhone && <span style={{position: "absolute", left:"56%"}}>{props.type}</span>}
+            {!props.isPhone && <span style={{position: "absolute", left:"78%"}}>{props.modified}</span>}
         </WindowInnerObjectStyled>
         
     )

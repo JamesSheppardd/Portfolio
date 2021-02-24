@@ -61,7 +61,7 @@ const ResizeHandle = styled.span`
 `;
 
 const Window = props => {
-  let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 480px)").matches;
+  let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 812px)").matches;
 
   const [objects, setObjects] = useState(props.objects);
   const [currentFolderName, setCurrentFolderName] = useState(props.currentFolderName);
@@ -86,7 +86,7 @@ const Window = props => {
   }
 
     return (
-      <div style={{width: "100%", height: "94.3vh"}}>
+      <div style={{width: "100%", height: "93.7vh"}}>
         {!isPhone && 
           <Draggable bounds="parent" handle="strong" >
             <StyledWindow className={`${props.className}__window window active`} leftPos={props.leftPos} topPos={props.topPos} onMouseDownCapture={changeToActive} >

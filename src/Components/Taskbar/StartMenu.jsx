@@ -44,11 +44,12 @@ const StartMenuObjects = props => {
     }
 
     const openTab = () => {
-        if(props.link !== "mailto:jamesasheppard9@gmail.com"){
-          window.open(props.link, "_blank");
+        if(props.link.includes("mailto")){
+            window.open(props.link, "_self");
+          
         }
         else{
-          window.open(props.link, "_self");
+            window.open(props.link, "_blank");
         }
     }
 
@@ -102,7 +103,7 @@ const StartMenu = props => {
     return (
         <StyledStartMenu className="start-menu">
             <StartMenuObjects name="GitHub" type="Github" link="https://github.com/JamesSheppardd" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
-            <StartMenuObjects name="Favourite Projects" type="File Folder" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
+            {/*<StartMenuObjects name="Favourite Projects" type="File Folder" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>*/}
             <StartMenuObjects name="CV" type="Text Document" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
             <StartMenuObjects name="Source Code" type="Github" link="https://github.com/JamesSheppardd/Portfolio" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>
             <StartMenuObjects name="Contact Me" type="Mail" link="mailto:James@jamessheppard.net" openDocument={props.openDocument} setFilename={props.setFilename}></StartMenuObjects>

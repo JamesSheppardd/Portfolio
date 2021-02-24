@@ -5,9 +5,9 @@ import tipOfDay from "../Common/assets/images/icons/Tip of the Day.ico"
 
 const StyledWindow = styled.div`
     position: absolute;
-    left: 40px;
-    top: 140px;
-    right: 290px;
+    
+    
+    
     bottom: 100px;
     ${createBorderStylesInner()}
     ${createInnerBoxStyles()}
@@ -22,10 +22,10 @@ const WindowInner = props => {
 
 
     return (
-        <div className={props.className} style={{height: 0}}>
-            <StyledWindow>
-                <img src={tipOfDay} alt="" width={48} style={{position: "absolute", paddingLeft: 35, paddingTop: 50}}></img>
-                <div style={{paddingTop: 30, paddingLeft: 100, paddingRight: 100}}>   
+        <div className="welcome-window-inner--window" style={{height: 0}}>
+            <StyledWindow className="welcome-window-inner">
+                <img className="welcome-window-inner__icon" src={tipOfDay} alt="" width={48}></img>
+                <div className="welcome-window-inner__content">   
                     <h2>Hi There!</h2>
                     
                     <p>
