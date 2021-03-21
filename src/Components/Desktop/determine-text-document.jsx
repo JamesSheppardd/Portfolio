@@ -17,6 +17,8 @@ const determineTextDocument = (filename) => {
             return <text.CSText className={`text-document__${filename}`} filename={filename} />;
         case "GML":
             return <text.GMLText className={`text-document__${filename}`} filename={filename} />;
+        case "Calculator":
+            return <text.CalculatorText className={`text-document__${filename}`} filename={filename} />;
             
         default:
             break;

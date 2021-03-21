@@ -28,6 +28,8 @@ export const newObject = (name, size, type, modified) => {
 const StyledWindow = styled.div`
     position: absolute;
     font-size: 1rem;
+    left: ${props => props.leftPos}%;
+    top: ${props => props.topPos}%;
     ${createBorderStyles()}
     ${createBoxStyles()}
 `;

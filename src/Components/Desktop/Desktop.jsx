@@ -69,8 +69,8 @@ const Desktop = (props) => {
             {/* Opening Projects folder */}
             { projectFolder && <Window 
                 className="file-explorer__projects"
-                leftPos="20" 
-                topPos="1" 
+                leftPos="5" 
+                topPos="5" 
                 currentFolderName="Projects"
                 triggerWindow={triggerOpenProjectsFolderState}
                 openFolder={triggerOpenFolderState}
@@ -80,7 +80,7 @@ const Desktop = (props) => {
                 objects={[
                     {"name": "C#", "size": 0, "type": "File Folder", "modified": "16 February 2021"}, 
                     {"name": "Gamemaker Language (GML)", "size": 0, "type": "File Folder", "modified": "16 February 2021"},
-                    {"name": "HTML/CSS/JS & React", "size": 0, "type": "File Folder", "modified": "16 February 2021"},
+                    {"name": "JavaScript & TypeScript", "size": 0, "type": "File Folder", "modified": "16 February 2021"},
                     {"name": "Python", "size": 0, "type": "File Folder", "modified": "16 February 2021"}
                 ]}
             /> }
@@ -88,8 +88,8 @@ const Desktop = (props) => {
             {/* Opening Languages folder */}
             { languagesFolder && <Window 
                 className="file-explorer"
-                leftPos="20" 
-                topPos="1" 
+                leftPos="8" 
+                topPos="3" 
                 currentFolderName="Languages"
                 triggerWindow={triggerOpenLanguagesFolderState}
                 openFolder={triggerOpenFolderState}
@@ -107,7 +107,7 @@ const Desktop = (props) => {
             {/* Opening Socials folder */}
             { socialsFolder && <Window 
                 className="file-explorer"
-                leftPos="20" 
+                leftPos="10" 
                 topPos="1" 
                 currentFolderName="Socials"
                 triggerWindow={triggerOpenSocialsFolderState}
@@ -124,8 +124,8 @@ const Desktop = (props) => {
 
             { textOpen && <Window 
                 className="text-document"
-                leftPos="30" 
-                topPos="3" 
+                leftPos="20" 
+                topPos="10" 
                 currentFolderName={filename}
                 triggerWindow={triggerOpenTextDocument}
                 isFileExplorer={false}

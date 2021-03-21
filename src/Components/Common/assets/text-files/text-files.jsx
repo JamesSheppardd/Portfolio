@@ -6,5 +6,6 @@ import WebDevText from "./web-dev-text";
 import PortfolioText from "./projects/portfolio/portfolio-text";
 import CSText from "./c#-text";
 import GMLText from "./gml-text";
+import CalculatorText from "./projects/calculator/calculator-text"
 
-export { AboutMeText, CurrentWeatherApp, PythonText, WebDevText, PortfolioText, CSText, GMLText };
+export { AboutMeText, CurrentWeatherApp, PythonText, WebDevText, PortfolioText, CSText, GMLText, CalculatorText };
