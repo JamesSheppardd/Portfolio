@@ -56,6 +56,10 @@ button:hover {
   z-index: 9997;
 }
 
+.text-image {
+  max-width: 100%;
+}
+
 /* Desktop Screens */
 @media (min-width: 813px){
   .welcome-button {

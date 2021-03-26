@@ -108,7 +108,7 @@ const Window = props => {
         
         {/* If is a phone, no draggable window */}
         {isPhone && 
-          <StyledWindow className={`${props.className}__window window active`} leftPos={props.leftPos} topPos={props.topPos} onMouseDownCapture={changeToActive} >
+          <StyledWindow className={`${props.className}__window window active`} leftPos={0} topPos={0} onMouseDownCapture={changeToActive} >
             <WindowOptions className={`${props.className}__options`} />
             <strong className={`${props.className}__drag drag-area`}>
               <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} windowType={props.className} />

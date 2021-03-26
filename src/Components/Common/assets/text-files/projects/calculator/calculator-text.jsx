@@ -37,9 +37,9 @@ const CalculatorText = () => {
             an understandable JS calculation, and this module made it possible to add more complex mathematical functions, such as trigonometry or pi.</p>
             <p style={{color:"grey"}}>______________________________________________________</p>
             <div style={{textAlign: "center"}}>    
-                <img src="https://raw.githubusercontent.com/JamesSheppardd/simple-calculator/main/assets/readme_images/calculator2.png" alt="img_1"></img>
+                <img className="text-image" src="https://raw.githubusercontent.com/JamesSheppardd/simple-calculator/main/assets/readme_images/calculator2.png" alt="img_1"></img>
                 <p></p>
-                <img src="https://raw.githubusercontent.com/JamesSheppardd/simple-calculator/main/assets/readme_images/calculator1.png" alt="img_2"></img>
+                <img className="text-image" src="https://raw.githubusercontent.com/JamesSheppardd/simple-calculator/main/assets/readme_images/calculator1.png" alt="img_2"></img>
             </div>
         </StyledDiv>
         

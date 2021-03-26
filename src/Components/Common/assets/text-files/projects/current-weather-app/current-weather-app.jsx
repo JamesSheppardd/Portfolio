@@ -6,7 +6,7 @@ import img3 from "./photo3.PNG";
 const StyledDiv = styled.div`
     font-size: 23px;
     padding: 0px 5px;
-    text-align: center;
+    text-align: left;
 `;
 
 const CurrentWeatherApp = () => {
@@ -23,12 +23,12 @@ const CurrentWeatherApp = () => {
             <h2><a href="https://github.com/JamesSheppardd/CurrentWeather" target="_blank" rel="noreferrer">Click here to view it's Github repository.</a></h2>
             <br />
             <br />
-            <h2 style={{textDecoration: "underline"}}>Here's some screenshots</h2> 
-            <img src={img1} alt="1" width={600} />
+            <h2 style={{textDecoration: "underline", textAlign: "center"}}>Here's some screenshots</h2> 
+            <img src={img1} alt="1" width={600} className="text-image" />
             <br />
-            <img src={img2} alt="2" width={600} />
+            <img src={img2} alt="2" width={600} className="text-image" />
             <br />
-            <img src={img3} alt="3" width={600} />
+            <img src={img3} alt="3" width={600} className="text-image" />
         </StyledDiv>
         
     )
