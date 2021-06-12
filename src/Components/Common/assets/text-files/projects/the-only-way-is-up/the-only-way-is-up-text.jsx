@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import img1 from "./onlywayisup1.png";
+import img2 from "./onlywayisup2.png";
+import img3 from "./onlywayisup3.png";
+
 
 const StyledDiv = styled.div`
     font-size: 23px;
@@ -15,23 +19,28 @@ const SelectorButton = styled.button`
     text-indent: ${props => props.textIndent}%;
     background-color: #c6c6c6;
     transform: scale(1.1);
+    overflow-x: hidden;
 `;
 
-const Boilerplate = (props) => {
+const OnlyWayIsUp = (props) => {
     const openRepository = () => {
-        window.open("", "_blank");
+        window.open("https://jamessheppard.itch.io/the-only-way-is-up", "_blank");
     }
 
     return (
         <StyledDiv>
             <div style={{textAlign: "center"}}>
-                <SelectorButton onClick={openRepository}>View Repository</SelectorButton>
+                <SelectorButton onClick={openRepository}>Play the game!</SelectorButton>
             </div>
             <h2 style={{textAlign: "center"}}>
                 <u>{props.filename}</u>
             </h2>
+
             <p style={{textAlign: 'left'}}>
-            
+                ‘The Only Way Is Up’ is a game I made in a weekend as my first ever game jam game, and is heavily inspired by Jump King and other games of that genre of difficult games, such as Getting Over It. 
+                It was my first time creating everything apart from the font for the game, including visuals and the music and sounds. Due to it being a jam game, and me not being too experienced at the time there 
+                is an issue where on slower machines the movement works in slow motion due to me not being familiar with concepts of delta time, however everyone who has played it and got back to me seems to enjoy 
+                it, so why not challenge yourself?
             </p>
             
             <p style={{color:"grey"}}>______________________________________________________</p>
@@ -47,4 +56,4 @@ const Boilerplate = (props) => {
         
     )
 }
-export default Boilerplate;
+export default OnlyWayIsUp;

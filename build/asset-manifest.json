@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.f4054bcf.chunk.css",
-    "main.js": "/static/js/main.62f38848.chunk.js",
-    "main.js.map": "/static/js/main.62f38848.chunk.js.map",
+    "main.js": "/static/js/main.e38767b2.chunk.js",
+    "main.js.map": "/static/js/main.e38767b2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2fd7dc15.js",
     "runtime-main.js.map": "/static/js/runtime-main.2fd7dc15.js.map",
     "static/js/2.0093a9c3.chunk.js": "/static/js/2.0093a9c3.chunk.js",
@@ -10,20 +10,29 @@
     "index.html": "/index.html",
     "static/css/main.f4054bcf.chunk.css.map": "/static/css/main.f4054bcf.chunk.css.map",
     "static/js/2.0093a9c3.chunk.js.LICENSE.txt": "/static/js/2.0093a9c3.chunk.js.LICENSE.txt",
+    "static/media/Earth (16 colors).c452d2c7.ico": "/static/media/Earth (16 colors).c452d2c7.ico",
     "static/media/Folder.ffd669e3.ico": "/static/media/Folder.ffd669e3.ico",
     "static/media/GitHub.a302de18.ico": "/static/media/GitHub.a302de18.ico",
     "static/media/Mail.50413ec4.ico": "/static/media/Mail.50413ec4.ico",
     "static/media/My Computer.4d2bb9d6.ico": "/static/media/My Computer.4d2bb9d6.ico",
     "static/media/Tip of the Day.8c41fc16.ico": "/static/media/Tip of the Day.8c41fc16.ico",
+    "static/media/onlywayisup1.39c961f7.png": "/static/media/onlywayisup1.39c961f7.png",
+    "static/media/onlywayisup2.524b51c9.png": "/static/media/onlywayisup2.524b51c9.png",
+    "static/media/onlywayisup3.d16d5766.png": "/static/media/onlywayisup3.d16d5766.png",
     "static/media/photo1.7655e1cd.png": "/static/media/photo1.7655e1cd.png",
     "static/media/photo2.d217a950.png": "/static/media/photo2.d217a950.png",
     "static/media/photo3.9a7f4653.PNG": "/static/media/photo3.9a7f4653.PNG",
+    "static/media/project-b1.bfb17711.png": "/static/media/project-b1.bfb17711.png",
+    "static/media/project-b2.6df2fdd4.png": "/static/media/project-b2.6df2fdd4.png",
+    "static/media/project-b3.de866077.png": "/static/media/project-b3.de866077.png",
+    "static/media/solarsystem1.4f4c4f0f.gif": "/static/media/solarsystem1.4f4c4f0f.gif",
+    "static/media/solarsystem2.86a495a5.gif": "/static/media/solarsystem2.86a495a5.gif",
     "static/media/index.css": "/static/media/w95fa.a79f0836.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.2fd7dc15.js",
     "static/js/2.0093a9c3.chunk.js",
     "static/css/main.f4054bcf.chunk.css",
-    "static/js/main.62f38848.chunk.js"
+    "static/js/main.e38767b2.chunk.js"
   ]
 }

@@ -7,6 +7,7 @@ import determineTextDocument from "./determine-text-document";
 // Assets
 import * as images from "../Common/assets/images/images.jsx";
 
+// Apps
 const Desktop = (props) => {
     const [projectFolder, setProjectFolder] = useState(false);
     const [languagesFolder, setLanguagesFolder] = useState(false);
@@ -15,6 +16,8 @@ const Desktop = (props) => {
     const [textContent, setTextContent] = useState(undefined);
     const [textOpen, setTextOpen] = useState(false);
     const [filename, setFilename] = useState(undefined);
+    const [app, setApp] = useState(undefined);
+    const [appOpen, setAppOpen] = useState(false);
     
     
 
@@ -40,6 +43,12 @@ const Desktop = (props) => {
         
     }
 
+    const triggerOpenApp = (newApp) => {
+        setApp(() => newApp);
+        setAppOpen(prevState => !prevState);
+        
+    }
+
     const triggerSetFilename = (name) => {
         setFilename(() => name);
         
@@ -59,7 +68,9 @@ const Desktop = (props) => {
                 {/* Languages button */}
                 <DesktopButton className="desktop__languages" text="Languages" icon={images.folderIcon} iconClass="desktop__languages__icon" textClass="desktop__languages__text" formClass="desktop__languages" openWindow={triggerOpenLanguagesFolderState}/>
                 {/* CV button */}
-                <DesktopButton className="desktop__cv" text="CV" icon={images.textFileIcon} iconClass="desktop__cv__icon" textClass="desktop__cv__text" formClass="desktop__cv" openWindow={triggerOpenTextDocument} setFilename={triggerSetFilename}/>
+                {/*<DesktopButton className="desktop__cv" text="CV" icon={images.textFileIcon} iconClass="desktop__cv__icon" textClass="desktop__cv__text" formClass="desktop__cv" openWindow={triggerOpenTextDocument} setFilename={triggerSetFilename}/>*/}
+                {/* Solar System */}
+                <DesktopButton className="desktop__solar-system" text="Solar System" icon={images.earthIcon} iconClass="desktop__ss__icon" textClass="desktop__ss__text" formClass="desktop__ss" openWindow={triggerOpenApp} setFilename={triggerSetFilename}/>
                 {/* GitHub button */}
                 <DesktopButton className="desktop__github" text="GitHub" icon={images.gitHubLogo} iconClass="desktop__github__icon" textClass="desktop__github__text" formClass="desktop__github" link="https://github.com/JamesSheppardd" />
                 {/* Contact Me button */}
@@ -75,6 +86,7 @@ const Desktop = (props) => {
                 triggerWindow={triggerOpenProjectsFolderState}
                 openFolder={triggerOpenFolderState}
                 isFileExplorer={true}
+                isApp={false}
                 openText={triggerOpenTextDocument}
                 setFilename={triggerSetFilename}
                 objects={[
@@ -94,6 +106,7 @@ const Desktop = (props) => {
                 triggerWindow={triggerOpenLanguagesFolderState}
                 openFolder={triggerOpenFolderState}
                 isFileExplorer={true}
+                isApp={false}
                 openText={triggerOpenTextDocument}
                 setFilename={triggerSetFilename}
                 objects={[
@@ -102,6 +115,18 @@ const Desktop = (props) => {
                     {"name": "C#", "size": 90000, "type": "Text Document", "modified": "22 February 2021"},
                     {"name": "GML", "size": 80000, "type": "Text Document", "modified": "22 February 2021"}
                 ]}
+            /> }
+
+            {/* Opening App */}
+            { appOpen && <Window 
+                className="file-explorer"
+                leftPos="5" 
+                topPos="9" 
+                currentFolderName="Solar System"
+                triggerWindow={triggerOpenApp}
+                isFileExplorer={false}
+                isApp={true}
+                setFilename={triggerSetFilename}
             /> }
 
             {/* Opening Socials folder */}
@@ -129,6 +154,7 @@ const Desktop = (props) => {
                 currentFolderName={filename}
                 triggerWindow={triggerOpenTextDocument}
                 isFileExplorer={false}
+                isApp={false}
                 content={textContent}
             /> }
         </div>

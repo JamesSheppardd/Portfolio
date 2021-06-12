@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
     font-size: 23px;
     padding: 0px 5px;
+    overflow-x: hidden;
 `;
 
 const SelectorButton = styled.button`
@@ -16,7 +17,7 @@ const SelectorButton = styled.button`
     transform: scale(1.1);
 `;
 
-const CalculatorText = () => {
+const CalculatorText = (props) => {
     const openRepository = () => {
         window.open("https://github.com/JamesSheppardd/simple-calculator", "_blank");
     }
@@ -27,10 +28,12 @@ const CalculatorText = () => {
     return (
         <StyledDiv>
             <div style={{textAlign: "center"}}>
-                <SelectorButton onClick={openRepository} style={{left: -10}}>View Repository</SelectorButton>
+                <SelectorButton onClick={openRepository}>View Repository</SelectorButton>
                 <SelectorButton onClick={openInstall} style={{left: 10}}>Download</SelectorButton>
             </div>
-            <h2 style={{textAlign: "center"}}><u>Calculator</u></h2>
+            <h2 style={{textAlign: "center"}}>
+                <u>{props.filename}</u>
+            </h2>
             <p>This is a simple calculator created with the Electron framework, and written in TypeScript and JavaScript.</p>
             <p style={{color:"grey"}}>______________________________________________________</p>
             <p>I used the <a href="https://www.npmjs.com/package/math-expression-evaluator" target="_blank" rel="noreferrer">math expression evaluator's</a> eval function to parse the calculations from a string into 

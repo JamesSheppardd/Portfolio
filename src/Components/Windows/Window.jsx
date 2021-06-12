@@ -96,12 +96,14 @@ const Window = props => {
               <strong className={`${props.className}__drag drag-area`}>
                 <WindowHeader className={`${props.className}__header window-header`} currentFolderName={currentFolderName} close={props.triggerWindow} windowType={props.className} />
               </strong>
-              <WindowInner className={`${props.className}__inner`} objects={objects} openFolder={openFolder} setObjects={setObjects} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} openText={openText} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />
+              <WindowInner className={`${props.className}__inner`} objects={objects} openFolder={openFolder} setObjects={setObjects} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} openText={openText} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} isApp={props.isApp}/>
               
               {/* If it is a file explorer window */}
               {props.isFileExplorer && 
                 <StatusBar className={`${props.className}__status-bar`} objectsLength={objects.length} objectsSize={objects.map(object => object.size)} />
               }
+              {/* If is app */}
+              
               <ResizeHandle className={`${props.className}__resize`} data-testid="resizeHandle" />
             </StyledWindow>
           </Draggable>}

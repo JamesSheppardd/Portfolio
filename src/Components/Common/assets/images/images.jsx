@@ -7,5 +7,6 @@ import textFileIcon from "./TextFile.png";
 import aboutMeIcon from "./icons/My Computer.ico"
 import mailIcon from "./icons/Mail.ico";
 import gitHubLogo from "./icons/GitHub.ico"
+import earthIcon from "./icons/Earth (16 colors).ico"
 
-export { exitButton, maxButton, minButton, folderIcon, folderOpenIcon, textFileIcon, aboutMeIcon, mailIcon, gitHubLogo };
+export { exitButton, maxButton, minButton, folderIcon, folderOpenIcon, textFileIcon, aboutMeIcon, mailIcon, gitHubLogo, earthIcon };

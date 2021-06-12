@@ -22,7 +22,7 @@ const GMLText = () => {
 
             <h2><u>Notable projects:</u></h2>
             <ul>
-            
+                <li><a href="https://jamessheppard.itch.io/the-only-way-is-up" target="_blank" rel="noreferrer">The Only Way Is Up</a></li>
             </ul>
             
         </StyledDiv>

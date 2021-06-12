@@ -19,7 +19,13 @@ const determineTextDocument = (filename) => {
             return <text.GMLText className={`text-document__${filename}`} filename={filename} />;
         case "Calculator":
             return <text.CalculatorText className={`text-document__${filename}`} filename={filename} />;
-            
+        case "Solar System Simulation":
+            return <text.SolarSystemText className={`text-document__${filename}`} filename={filename} />;
+        case "Project B":
+            return <text.ProjectB className={`text-document__${filename}`} filename={filename} />;
+         case "The Only Way Is Up":
+            return <text.OnlyWayIsUp className={`text-document__${filename}`} filename={filename} />;
+         
         default:
             break;
     }

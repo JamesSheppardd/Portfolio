@@ -5,12 +5,31 @@ const StyledDiv = styled.div`
     padding: 0px 5px;
     text-align: center;
 `;
+const SelectorButton = styled.button`
+    position: relative;
+    height: 30px;
+    top: 15px;
+    text-align: start;
+    font-size: 19px;
+    text-indent: ${props => props.textIndent}%;
+    background-color: #c6c6c6;
+    transform: scale(1.1);
+`;
 
-const PortfolioText = () => {
+
+const PortfolioText = (props) => {
+    const openRepository = () => {
+        window.open("https://github.com/JamesSheppardd/Portfolio", "_blank");
+    }
+
     return (
         <StyledDiv>
-            <strong><a href="https://github.com/JamesSheppardd/Portfolio" target="_blank" rel="noreferrer">Check out the code</a></strong>
-            <br />
+            <div style={{textAlign: "center"}}>
+                <SelectorButton onClick={openRepository}>View Repository</SelectorButton>
+            </div>
+            <h2 style={{textAlign: "center"}}>
+                <u>{props.filename}</u>
+            </h2>
             <p>
             I decided that I would probably need a website to act as a portfolio at some point, and so after 2 months of learning JavaScript, I thought it would be a good way to bring all I had learnt together, and 
             to test myself out by learning something new – React. 

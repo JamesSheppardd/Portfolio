@@ -24,6 +24,7 @@ const WebDevText = () => {
             <h2><u>Notable projects:</u></h2>
             <ul>
                 <li><a href="https://github.com/JamesSheppardd/Portfolio" target="_blank" rel="noreferrer">Portfolio</a></li>
+                <li><a href="https://github.com/JamesSheppardd/simple-calculator" target="_blank" rel="noreferrer">Calculator</a></li>
             </ul>
         </StyledDiv>
         
