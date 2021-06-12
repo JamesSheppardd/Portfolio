@@ -150,7 +150,7 @@ const WindowInner = props => {
 
             {/* Text Document window */}
             {!props.isFileExplorer && <StyledWindow className={`${props.className}--window`} />}
-            {!props.isFileExplorer && <div className={`${props.className}--content`} style={{position: "absolute", top: "13%", left: 14, right: 12, bottom: 62, overflow: "hidden", padding: 0}}>
+            {!props.isFileExplorer && <div className={`${props.className}--content`} style={{position: "absolute", top: "13%", left: 14, right: 12, bottom: 62, overflowX: "hidden", padding: 0, }}>
                 {selectTextDocument()}
                 {props.isApp &&
                     <iframe src="https://solar-system-nu.vercel.app/" title="Solar System" width="100%" height="100%" style={{}}>
