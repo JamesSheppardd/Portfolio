@@ -155,6 +155,7 @@ const Desktop = (props) => {
                 triggerWindow={triggerOpenTextDocument}
                 isFileExplorer={false}
                 isApp={false}
+                app={app}
                 content={textContent}
             /> }
         </div>
