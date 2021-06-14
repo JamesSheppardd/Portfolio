@@ -122,7 +122,7 @@ const WelcomeWindow = props => {
               
               
 
-              <WelcomeWindowInner className={`${props.className}__inner welcome-window-inner`} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />
+              <WelcomeWindowInner className={`${props.className}__inner welcome-window-inner`} header={header} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} textFile={props.currentFolderName} content={welcomeText} setFilename={props.setFilename} />
             </StyledWindow>}
         
       </div>
