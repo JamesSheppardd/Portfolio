@@ -7,8 +7,8 @@ import themes from "../Common/themes";
 // Components
 import WelcomeWindowHeader from "./WelcomeWindowHeader";
 import WelcomeWindowInner from "./WelcomeWindowInner";
-// Cursors
 
+import determineTextDocument from "../Desktop/determine-text-document";
 
 const StyledWindow = styled.div`
     position: absolute;
@@ -46,7 +46,11 @@ const TitleWhite = styled.span`
 const WelcomeWindow = props => {
   let isPhone = window.matchMedia("only screen and (min-device-width: 320px) and (max-device-width: 812px)").matches;
 
+  const startWelcomeText = 'Welcome to my website! Feel free to open any of the folders or documents on the desktop, doing so by double clicking (or double tapping, if on a touchscreen device), or click on the "Start" button in the taskbar in the bottom left for more readily available documents.'
+
   const [currentFolderName, setCurrentFolderName] = useState(props.currentFolderName);
+  const [welcomeText, setWelcomeText] = useState(startWelcomeText);
+  const [header, setHeader] = useState("Hi There!");
 
   const openGithub = () => {
     window.open("https://github.com/JamesSheppardd", "_blank");
@@ -54,6 +58,11 @@ const WelcomeWindow = props => {
 
   const openContact = () => {
     window.open("mailto:James@jamessheppard.net", "_self");
+  }
+
+  const openChanges = () => {
+    setWelcomeText(() => determineTextDocument("Changelog").props.children[2])
+    setHeader(() => "What's New")
   }
 
     return (
@@ -69,7 +78,7 @@ const WelcomeWindow = props => {
               <Title className="welcome-window-title" >Welcome to <TitleBold>Sheppard</TitleBold> <TitleWhite>95</TitleWhite></Title>
 
               <div>
-                <SelectorButton className="welcome-button welcome-button__whats-new" >What's <u>N</u>ew</SelectorButton>
+                <SelectorButton className="welcome-button welcome-button__whats-new" onClick={openChanges}>What's <u>N</u>ew</SelectorButton>
               </div>
               <div style={{paddingTop: 50}}>
                 <SelectorButton className="welcome-button welcome-button__github" onClick={openGithub}><u>G</u>ithub</SelectorButton>
@@ -83,7 +92,7 @@ const WelcomeWindow = props => {
               
               
 
-              <WelcomeWindowInner className={`${props.className}__inner welcome-window-inner`} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} textFile={props.currentFolderName} content={props.content} setFilename={props.setFilename} />
+              <WelcomeWindowInner className={`${props.className}__inner welcome-window-inner`} header={header} setCurrentFolderName={setCurrentFolderName} isFileExplorer={props.isFileExplorer} textFile={props.currentFolderName} content={welcomeText} setFilename={props.setFilename} />
             </StyledWindow>
           </Draggable>}
         
@@ -99,7 +108,7 @@ const WelcomeWindow = props => {
               <Title className="welcome-window-title" >Welcome to <TitleBold>Sheppard</TitleBold> <TitleWhite>95</TitleWhite></Title>
 
               <div>
-                <SelectorButton className="welcome-button welcome-button__whats-new" style={{position: "absolute", left: "3%"}}>What's <u>N</u>ew</SelectorButton>
+                <SelectorButton className="welcome-button welcome-button__whats-new" style={{position: "absolute", left: "3%"}} onClick={props.openChangelog}>What's <u>N</u>ew</SelectorButton>
               </div>
               <div style={{paddingTop: 50}}>
                 <SelectorButton className="welcome-button welcome-button__github" onClick={openGithub} ><u>G</u>ithub</SelectorButton>

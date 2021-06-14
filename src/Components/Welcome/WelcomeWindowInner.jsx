@@ -26,12 +26,8 @@ const WindowInner = props => {
             <StyledWindow className="welcome-window-inner">
                 <img className="welcome-window-inner__icon" src={tipOfDay} alt="" width={48}></img>
                 <div className="welcome-window-inner__content">   
-                    <h2>Hi There!</h2>
-                    
-                    <p>
-                    Welcome to my website! Feel free to open any of the folders or documents on the desktop, doing so by double clicking (or double tapping, if on a touchscreen device), or click on the "Start" button in 
-                    the taskbar in the bottom left for more readily available documents.
-                    </p>
+                    <h2>{props.header}</h2>
+                    {props.content}
                 </div>
 
                 

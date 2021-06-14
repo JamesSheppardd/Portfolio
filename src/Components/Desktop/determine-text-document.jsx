@@ -23,12 +23,48 @@ const determineTextDocument = (filename) => {
             return <text.SolarSystemText className={`text-document__${filename}`} filename={filename} />;
         case "Project B":
             return <text.ProjectB className={`text-document__${filename}`} filename={filename} />;
-         case "The Only Way Is Up":
+        case "The Only Way Is Up":
             return <text.OnlyWayIsUp className={`text-document__${filename}`} filename={filename} />;
-         
+        case "Changelog":
+            return <div className={`text-document__${filename}`} filename={filename} >
+                <h1 style={{textAlign: "center"}}>Changelog:</h1>
+                <p style={{overflowX: "hidden", color: "grey"}}>---------------------------------------------------------------------------------------------------------</p>
+                {changelogText(text.changelogTxt)}
+                
+            </div>;
+        
         default:
             break;
     }
 }
+
+const changelogText = (arr) => {
+    // Get changelog from localStorage
+    arr = localStorage.getItem("changelog");
+    arr = JSON.parse(arr);
+    let text = []
+    arr.forEach((o, ind) => {
+        text[ind] = `${o.date}  -  ${o.text}\n`;
+    });
+    return <ul style={{fontSize: '20px'}}>
+        <li>{text[0]}</li>
+        <li>{text[1]}</li>
+        <li>{text[2]}</li>
+        <li>{text[3]}</li>
+        <li>{text[4]}</li>
+        <li>{text[5]}</li>
+        <li>{text[6]}</li>
+        <li>{text[7]}</li>
+        <li>{text[8]}</li>
+        <li>{text[9]}</li>
+        <li>{text[10]}</li>
+        <li>{text[11]}</li>
+        <li>{text[12]}</li>
+    </ul>
+
+    // const text = `• ${el.date}  -  ${el.text}`;
+    // console.log(text)
+    // return text
+} 
 
 export default determineTextDocument;

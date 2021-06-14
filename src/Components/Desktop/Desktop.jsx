@@ -14,12 +14,12 @@ const Desktop = (props) => {
     const [socialsFolder, setSocialsFolder] = useState(false);
     const [folderOpen, setFolderOpen] = useState(false);
     const [textContent, setTextContent] = useState(undefined);
+    const [changeContent, setChangeContent] = useState(undefined);
     const [textOpen, setTextOpen] = useState(false);
+    const [changeOpen, setChangeOpen] = useState(false);
     const [filename, setFilename] = useState(undefined);
     const [app, setApp] = useState(undefined);
     const [appOpen, setAppOpen] = useState(false);
-    
-    
 
     const triggerOpenProjectsFolderState = (setTo) => {
         setProjectFolder(prevFileExplorer => setTo === undefined ? setTo : !prevFileExplorer);
@@ -34,12 +34,19 @@ const Desktop = (props) => {
 
     const triggerOpenFolderState = (newFolder) => {
         setFolderOpen(prevFolder => !prevFolder);
-        console.log(folderOpen);
+        console.log(folderOpen)
     }
 
     const triggerOpenTextDocument = (newContent) => {
         setTextContent(() => determineTextDocument(newContent));
         setTextOpen(prevState => !prevState);
+        
+    }
+
+    const triggerChangelogDocument = (newContent) => {
+        setChangeContent(() => determineTextDocument(newContent));
+        setChangeOpen(prevState => !prevState);
+        props.openChangelog()
         
     }
 
@@ -75,6 +82,9 @@ const Desktop = (props) => {
                 <DesktopButton className="desktop__github" text="GitHub" icon={images.gitHubLogo} iconClass="desktop__github__icon" textClass="desktop__github__text" formClass="desktop__github" link="https://github.com/JamesSheppardd" />
                 {/* Contact Me button */}
                 <DesktopButton className="desktop__contact" text="Contact Me" icon={images.mailIcon} iconClass="desktop__contact__icon" textClass="desktop__contact__text" formClass="desktop__contact" link="mailto:James@jamessheppard.net"/>
+                {/* Changelog button */}
+                <DesktopButton className="desktop__changelog" text="Changelog" icon={images.textFileIcon} iconClass="desktop__changelog__icon" textClass="desktop__changelog__text" formClass="desktop__changelog" openWindow={triggerChangelogDocument} setFilename={triggerSetFilename}/>
+            
             </div>
 
             {/* Opening Projects folder */}
@@ -119,7 +129,7 @@ const Desktop = (props) => {
 
             {/* Opening App */}
             { appOpen && <Window 
-                className="file-explorer"
+                className="app-window"
                 leftPos="5" 
                 topPos="9" 
                 currentFolderName="Solar System"
@@ -158,6 +168,20 @@ const Desktop = (props) => {
                 app={app}
                 content={textContent}
             /> }
+
+            { (changeOpen || props.changelog.changelog) && <Window 
+                className="changelog-document"
+                leftPos="27" 
+                topPos="16" 
+                currentFolderName={filename}
+                triggerWindow={triggerChangelogDocument}
+                isFileExplorer={false}
+                isApp={false}
+                app={app}
+                content={changeContent}
+            /> }
+
+            
         </div>
     )
 }

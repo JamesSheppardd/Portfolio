@@ -10,5 +10,6 @@ import CalculatorText from "./projects/calculator/calculator-text"
 import SolarSystemText from "./projects/solar-system/solar-system-text";
 import ProjectB from "./projects/project-b/project-b";
 import OnlyWayIsUp from "./projects/the-only-way-is-up/the-only-way-is-up-text";
+import { changelogTxt } from "./changelog-text";
 
-export { AboutMeText, CurrentWeatherApp, PythonText, WebDevText, PortfolioText, CSText, GMLText, CalculatorText, SolarSystemText, ProjectB, OnlyWayIsUp };
+export { AboutMeText, CurrentWeatherApp, PythonText, WebDevText, PortfolioText, CSText, GMLText, CalculatorText, SolarSystemText, ProjectB, OnlyWayIsUp, changelogTxt };

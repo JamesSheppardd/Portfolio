@@ -18,6 +18,7 @@ const Welcome = props => {
             <WelcomeWindow
                 currentFolderName="Welcome"
                 close={props.close}
+                openChangelog={props.openChangelog}
             ></WelcomeWindow>
         </StyledWelcome>
     )
