@@ -149,16 +149,24 @@ const WindowInner = props => {
             }
 
             {/* Text Document window */}
-            {!props.isFileExplorer && <StyledWindow className={`${props.className}--window`} />}
-            {!props.isFileExplorer && <div className={`${props.className}--content`} style={{position: "absolute", top: "13%", left: 14, right: 12, bottom: 62, overflowX: "hidden", padding: 0, }}>
-                {selectTextDocument()}
-                {props.isApp &&
-                    <iframe src="https://solar-system-nu.vercel.app/" title="Solar System" width="100%" height="100%" style={{}}>
-                        <p>No support for iframes</p>
-                    </iframe>
-                }
-            </div>
-            }
+            {!props.isFileExplorer && <StyledWindow className={`${props.className}--window`} >
+                <div className={`${props.className}--content`} style={{position: "absolute", left: 14, right: 12, overflowX: "hidden", padding: 0, height: "100%"}}>
+                    {selectTextDocument()}
+                    {isPhone && 
+                        props.isApp &&
+                            <h1>Cannot display this media on this device.</h1>
+                        
+                    }
+                    {!isPhone && 
+                        props.isApp &&
+                            <iframe src="https://solar-system-nu.vercel.app/" title="Solar System" width="100%" height="100%" style={{}}>
+                                <p>No support for iframes</p>
+                            </iframe>
+                        
+                    }
+                </div>
+            
+        </StyledWindow>}
 
             
         </div>

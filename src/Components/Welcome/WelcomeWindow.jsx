@@ -108,7 +108,7 @@ const WelcomeWindow = props => {
               <Title className="welcome-window-title" >Welcome to <TitleBold>Sheppard</TitleBold> <TitleWhite>95</TitleWhite></Title>
 
               <div>
-                <SelectorButton className="welcome-button welcome-button__whats-new" style={{position: "absolute", left: "3%"}} onClick={props.openChangelog}>What's <u>N</u>ew</SelectorButton>
+                <SelectorButton className="welcome-button welcome-button__whats-new" style={{position: "absolute", left: "3%"}} onClick={openChanges}>What's <u>N</u>ew</SelectorButton>
               </div>
               <div style={{paddingTop: 50}}>
                 <SelectorButton className="welcome-button welcome-button__github" onClick={openGithub} ><u>G</u>ithub</SelectorButton>

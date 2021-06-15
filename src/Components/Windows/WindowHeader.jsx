@@ -6,6 +6,7 @@ import maxButton from "../Common/assets/images/MaximiseButton.png";
 import exitButton from "../Common/assets/images/ExitButton.png";
 import folderOpenImage from "../Common/assets/images/FolderOpen.png";
 import textImage from "../Common/assets/images/TextFile.png";
+import { earthIcon } from "../Common/assets/images/images";
 
 const WindowHeaderStyled = styled.div`
   display: inline-block;
@@ -34,6 +35,9 @@ const WindowHeaderContent = props => {
     switch(props.windowType){
       case "text-document":
         return textImage;
+      case "app-ss-window":
+        return earthIcon;
+      
       default:
         return folderOpenImage;
     }

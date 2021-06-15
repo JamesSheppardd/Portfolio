@@ -129,7 +129,7 @@ const Desktop = (props) => {
 
             {/* Opening App */}
             { appOpen && <Window 
-                className="app-window"
+                className="app-ss-window"
                 leftPos="5" 
                 topPos="9" 
                 currentFolderName="Solar System"
