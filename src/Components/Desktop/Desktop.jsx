@@ -103,7 +103,8 @@ const Desktop = (props) => {
                     {"name": "C#", "size": 0, "type": "File Folder", "modified": "16 February 2021"}, 
                     {"name": "Gamemaker Language (GML)", "size": 0, "type": "File Folder", "modified": "16 February 2021"},
                     {"name": "JavaScript & TypeScript", "size": 0, "type": "File Folder", "modified": "16 February 2021"},
-                    {"name": "Python", "size": 0, "type": "File Folder", "modified": "16 February 2021"}
+                    {"name": "Python", "size": 0, "type": "File Folder", "modified": "16 February 2021"},
+                    {"name": "6502 Assembly", "size": 0, "type": "File Folder", "modified": "30 July 2021"}
                 ]}
             /> }
 
@@ -123,7 +124,8 @@ const Desktop = (props) => {
                     {"name": "Python", "size": 2000, "type": "Text Document", "modified": "22 February 2021"}, 
                     {"name": "HTML/CSS/JS", "size": 700000, "type": "Text Document", "modified": "22 February 2021"},
                     {"name": "C#", "size": 90000, "type": "Text Document", "modified": "22 February 2021"},
-                    {"name": "GML", "size": 80000, "type": "Text Document", "modified": "22 February 2021"}
+                    {"name": "GML", "size": 80000, "type": "Text Document", "modified": "22 February 2021"},
+                    {"name": "6502 Assembly", "size": 40000, "type": "Text Document", "modified": "30 July 2021"}
                 ]}
             /> }
 

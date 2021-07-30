@@ -25,6 +25,13 @@ const openFolder = (object={}, setObjects, setCurrentFolderName) => {
           ]);
           setCurrentFolderName(() => object.name);
           break;
+        case "6502 assembly":
+          setObjects(() => [
+            newObject("Nerdy Nights translation", 321400, "Text Document", "25 July 2021"),
+            newObject("NES-Pong", 40000, "Text Document", "28 July 2021")
+          ]);
+          setCurrentFolderName(() => object.name);
+          break;
         
         default:
           break;

@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.be85f1fd.chunk.css",
-    "main.js": "/static/js/main.47d513cc.chunk.js",
-    "main.js.map": "/static/js/main.47d513cc.chunk.js.map",
+    "main.css": "/static/css/main.02eef742.chunk.css",
+    "main.js": "/static/js/main.3739ca0f.chunk.js",
+    "main.js.map": "/static/js/main.3739ca0f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2fd7dc15.js",
     "runtime-main.js.map": "/static/js/runtime-main.2fd7dc15.js.map",
     "static/js/2.d35f7633.chunk.js": "/static/js/2.d35f7633.chunk.js",
     "static/js/2.d35f7633.chunk.js.map": "/static/js/2.d35f7633.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.be85f1fd.chunk.css.map": "/static/css/main.be85f1fd.chunk.css.map",
+    "static/css/main.02eef742.chunk.css.map": "/static/css/main.02eef742.chunk.css.map",
     "static/js/2.d35f7633.chunk.js.LICENSE.txt": "/static/js/2.d35f7633.chunk.js.LICENSE.txt",
     "static/media/Earth (16 colors).c452d2c7.ico": "/static/media/Earth (16 colors).c452d2c7.ico",
     "static/media/Folder.ffd669e3.ico": "/static/media/Folder.ffd669e3.ico",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.2fd7dc15.js",
     "static/js/2.d35f7633.chunk.js",
-    "static/css/main.be85f1fd.chunk.css",
-    "static/js/main.47d513cc.chunk.js"
+    "static/css/main.02eef742.chunk.css",
+    "static/js/main.3739ca0f.chunk.js"
   ]
 }

@@ -17,6 +17,8 @@ const determineTextDocument = (filename) => {
             return <text.CSText className={`text-document__${filename}`} filename={filename} />;
         case "GML":
             return <text.GMLText className={`text-document__${filename}`} filename={filename} />;
+        case "6502 Assembly":
+            return <text.ASM6502 className={`text-document__${filename}`} filename={filename} />;
         case "Calculator":
             return <text.CalculatorText className={`text-document__${filename}`} filename={filename} />;
         case "Solar System Simulation":
@@ -25,6 +27,11 @@ const determineTextDocument = (filename) => {
             return <text.ProjectB className={`text-document__${filename}`} filename={filename} />;
         case "The Only Way Is Up":
             return <text.OnlyWayIsUp className={`text-document__${filename}`} filename={filename} />;
+        case "NES-Pong":
+            return <text.NESPongText className={`text-document__${filename}`} filename={filename} />;
+        case "Nerdy Nights translation":
+            return <text.NerdyNightsText className={`text-document__${filename}`} filename={filename} />;
+            
         case "Changelog":
             return <div className={`text-document__${filename}`} filename={filename} >
                 <h1 style={{textAlign: "center"}}>Changelog:</h1>
